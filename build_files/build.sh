@@ -2,6 +2,10 @@
 
 set -ouex pipefail
 
+# Prepare /opt for installing packages
+rm /opt
+mkdir /opt
+
 ### Install packages
 
 # Packages can be installed from any enabled yum repo on the image.
@@ -25,3 +29,8 @@ dnf5 install -y konsole nordvpn nordvpn-gui
 #### Example for enabling a System Unit File
 
 systemctl enable nordvpn
+
+# Move files installed to /opt to /usr/share/factory so they will be in the final image
+mv /opt /usr/share/factory
+# Restore symlink from /opt to /var/opt
+ln -s /var/opt /opt
