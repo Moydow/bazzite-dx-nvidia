@@ -19,6 +19,9 @@ dnf5 config-manager addrepo --id="nordvpn" --set=baseurl="https://repo.nordvpn.c
 # this installs a package from fedora repos
 dnf5 install -y konsole nordvpn nordvpn-gui
 
+# get rid of the AI junk
+dnf5 remove python3-ramalama
+
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
@@ -28,7 +31,7 @@ dnf5 install -y konsole nordvpn nordvpn-gui
 
 #### Example for enabling a System Unit File
 
-systemctl enable nordvpn
+systemctl enable nordvpn.service
 
 # Move files installed to /opt to /usr/share/factory so they will be in the final image
 mv /opt /usr/share/factory
