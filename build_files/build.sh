@@ -9,8 +9,11 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
+rpm -v --import "https://repo.nordvpn.com/gpg/nordvpn_public.asc"
+dnf5 config-manager addrepo --id="nordvpn" --set=baseurl="https://repo.nordvpn.com/yum/nordvpn/centos/x86_64/" --set=enabled=1 --overwrite
+
 # this installs a package from fedora repos
-dnf5 install -y tmux 
+dnf5 install -y konsole nordvpn nordvpn-gui
 
 # Use a COPR Example:
 #
@@ -21,4 +24,4 @@ dnf5 install -y tmux
 
 #### Example for enabling a System Unit File
 
-systemctl enable podman.socket
+systemctl enable nordvpn
