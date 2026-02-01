@@ -28,7 +28,7 @@ dnf5 install -y konsole nordvpn nordvpn-gui
 
 #### Example for enabling a System Unit File
 
-#systemctl enable nordvpn.service
+systemctl enable nordvpnd.socket
 
 # Move files installed to /opt to /usr/share/factory so they will be in the final image
 mv /opt /usr/share/factory
