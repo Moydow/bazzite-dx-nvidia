@@ -17,7 +17,7 @@ rpm -v --import "https://repo.nordvpn.com/gpg/nordvpn_public.asc"
 dnf5 config-manager addrepo --id="nordvpn" --set=baseurl="https://repo.nordvpn.com/yum/nordvpn/centos/x86_64/" --set=enabled=1 --overwrite
 
 # this installs a package from fedora repos
-dnf5 install -y konsole nordvpn nordvpn-gui
+dnf5 install -y libunity konsole nordvpn nordvpn-gui
 
 # Use a COPR Example:
 #
