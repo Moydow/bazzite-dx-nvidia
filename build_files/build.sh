@@ -19,8 +19,9 @@ dnf5 config-manager addrepo --id="nordvpn" --set=baseurl="https://repo.nordvpn.c
 # this installs a package from fedora repos
 dnf5 install -y libunity konsole nordvpn nordvpn-gui
 
-curl -sL https://vencord.dev/download/vesktop/amd64/rpm -o vencord.rpm
-dnf5 install -y vencord.rpm
+curl -sL https://vencord.dev/download/vesktop/amd64/rpm -o vesktop.rpm
+dnf5 install -y vesktop.rpm
+rm vesktop.rpm
 
 # Use a COPR Example:
 #
